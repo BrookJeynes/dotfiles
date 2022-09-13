@@ -58,7 +58,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "tpope/vim-surround" -- Add/Replace/Remove surround tags
-  use 'kevinhwang91/rnvimr' -- Ranger | File/Folder Navigation
+  use "easymotion/vim-easymotion"
 
   -- Visual Elements
   use "kyazdani42/nvim-web-devicons"
