@@ -1,6 +1,6 @@
 {
-  "title": "Capslock Enhancement",
-  "url": "https://vonng.com/capslock.json",
+  "title": "Chooky's custom keybinds",
+  "url": "https://raw.githubusercontent.com/BrookJeynes/dotfiles/main/capslock.json",
   "version": "3.0.3",
   "maintainers": [
     "Vonng"
