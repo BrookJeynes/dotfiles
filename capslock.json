@@ -2536,7 +2536,6 @@
             "key_code": "a",
             "modifiers": {
               "mandatory": [
-                "left_command",
                 "right_command",
                 "right_control",
                 "right_shift",
@@ -2632,7 +2631,7 @@
           ]
         },
         {
-          "description": "g = Intellij IDEA",
+          "description": "g = Rider",
           "type": "basic",
           "from": {
             "key_code": "g",
@@ -2647,7 +2646,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'IntelliJ IDEA'"
+              "shell_command": "open -a Rider"
             }
           ]
         }
