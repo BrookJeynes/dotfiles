@@ -978,10 +978,10 @@
           ]
         },
         {
-          "description": " ; = right",
+          "description": " semicolon = right",
           "type": "basic",
           "from": {
-            "key_code": ";",
+            "key_code": "semicolon",
             "modifiers": {
               "mandatory": [
                 "right_command",
