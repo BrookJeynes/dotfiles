@@ -1,16 +1,16 @@
 {
-  "title": "Chooky's custom keybinds",
+  "title": "Chooky's Custom Keybinds",
   "url": "https://raw.githubusercontent.com/BrookJeynes/dotfiles/main/capslock.json",
   "version": "3.0.3",
   "maintainers": [
-    "Vonng"
+    "Brook Jeynes"
   ],
-  "author": "Vonng(rh@vonng.com)",
-  "website": "http://capslock.vonng.com",
-  "json_url": "https://vonng.com/capslock.json",
-  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://vonng.com/capslock.json",
-  "gallery_url": "https://ke-complex-modifications.pqrs.org/#emulation-modes",
-  "repo": "https://github.com/Vonng/Capslock",
+  "author": "Brook Jeynes",
+  "website": "",
+  "json_url": "https://raw.githubusercontent.com/BrookJeynes/dotfiles/main/capslock.json",
+  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/BrookJeynes/dotfiles/main/capslock.json",
+  "gallery_url": "",
+  "repo": "https://github.com/BrookJeynes/dotfiles/blob/main/capslock.json",
   "rules": [
     {
       "description": "CapsLock to Hyper",
