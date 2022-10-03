@@ -197,7 +197,7 @@
           ]
         },
         {
-          "description": "control + h = ctrl + left (prev desktop)",
+          "description": "control + h = nav to tree-sitter",
           "type": "basic",
           "from": {
             "key_code": "h",
@@ -213,7 +213,7 @@
           },
           "to": [
             {
-              "key_code": "left_arrow",
+              "key_code": "m",
               "modifiers": [
                 "left_control"
               ]
@@ -492,7 +492,7 @@
           ]
         },
         {
-          "description": " k = down",
+          "description": "k = down",
           "type": "basic",
           "from": {
             "key_code": "k",
@@ -507,7 +507,7 @@
           },
           "to": [
             {
-              "key_code": "down_arrow"
+              "key_code": "y"
             }
           ]
         },
@@ -717,7 +717,7 @@
           ]
         },
         {
-          "description": " l = up",
+          "description": "l = up",
           "type": "basic",
           "from": {
             "key_code": "l",
@@ -732,7 +732,7 @@
           },
           "to": [
             {
-              "key_code": "up_arrow"
+              "key_code": "n"
             }
           ]
         },
@@ -930,7 +930,7 @@
           ]
         },
         {
-          "description": " semicolon = right",
+          "description": "semicolon = right",
           "type": "basic",
           "from": {
             "key_code": "semicolon",
@@ -945,7 +945,7 @@
           },
           "to": [
             {
-              "key_code": "right_arrow"
+              "key_code": "u"
             }
           ]
         },
