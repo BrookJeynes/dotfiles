@@ -443,30 +443,7 @@
             }
           ]
         },
-        {
-          "description": "control + j = tree-sitter navigation",
-          "type": "basic",
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "m",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]        
-        },
+        
         {
           "description": "shift + command + j = mouse wheel down fast",
           "type": "basic",
@@ -2475,6 +2452,96 @@
               }
             }
           ]
+        },
+        {
+          "description": "control + j = tree-sitter navigation left",
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "m",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]        
+        },
+        {
+          "description": "control + semicolon = tree-sitter navigation right",
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "semicolon",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ]        
+        },
+        {
+          "description": "shift + j = nvim page navigation left",
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "m"
+            }
+          ]        
+        },
+        {
+          "description": "shift + semicolon = nvim page navigation right",
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "semicolon"
+            }
+          ]        
         }
       ]
     },
