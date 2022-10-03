@@ -316,7 +316,7 @@
           ]
         },
         {
-          "description": " j = left",
+          "description": "j = left",
           "type": "basic",
           "from": {
             "key_code": "j",
@@ -507,7 +507,7 @@
           },
           "to": [
             {
-              "key_code": "j"
+              "key_code": "down_arrow"
             }
           ]
         },
@@ -732,7 +732,7 @@
           },
           "to": [
             {
-              "key_code": "k"
+              "key_code": "up_arrow"
             }
           ]
         },
@@ -945,7 +945,7 @@
           },
           "to": [
             {
-              "key_code": "l"
+              "key_code": "right_arrow"
             }
           ]
         },
