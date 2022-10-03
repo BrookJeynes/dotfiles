@@ -197,7 +197,7 @@
           ]
         },
         {
-          "description": "control + h = jump to tree-sitter (vim)",
+          "description": "control + h = ctrl + left (prev desktop)",
           "type": "basic",
           "from": {
             "key_code": "h",
@@ -213,7 +213,10 @@
           },
           "to": [
             {
-              "key_code": "h"
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_control"
+              ]
             }
           ]
         },
@@ -319,27 +322,6 @@
             "key_code": "j",
             "modifiers": {
               "mandatory": [
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "h"
-            }
-          ]
-        },
-        {
-          "description": "shift + j = left",
-          "type": "basic",
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
                 "right_command",
                 "right_control",
                 "right_shift",
