@@ -421,30 +421,6 @@
           ]
         },
         {
-          "description": "control + j = ctrl + down (focus application)",
-          "type": "basic",
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "down_arrow",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]
-        },
-        {
           "description": "option + j = mouse down",
           "type": "basic",
           "from": {
