@@ -213,10 +213,7 @@
           },
           "to": [
             {
-              "key_code": "h",
-              "modifiers": [
-                "left_control"
-              ]
+              "key_code": "h"
             }
           ]
         },
