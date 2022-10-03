@@ -336,6 +336,27 @@
           ]
         },
         {
+          "description": "shift + j = left",
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "h"
+            }
+          ]
+        },
+        {
           "description": "command + j = shift + down",
           "type": "basic",
           "from": {
