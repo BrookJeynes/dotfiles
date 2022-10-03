@@ -2518,7 +2518,10 @@
           },
           "to": [
             {
-              "key_code": "m"
+              "key_code": "m",
+              "modifiers": [
+                "left_shift"
+              ]
             }
           ]        
         },
@@ -2539,7 +2542,10 @@
           },
           "to": [
             {
-              "key_code": "semicolon"
+              "key_code": "semicolon",
+              "modifiers": [
+                "left_shift"
+              ]
             }
           ]        
         }
