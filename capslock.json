@@ -197,7 +197,7 @@
           ]
         },
         {
-          "description": "control + h = nav to tree-sitter",
+          "description": "control + h = ctrl + left (prev desktop)",
           "type": "basic",
           "from": {
             "key_code": "h",
@@ -213,7 +213,7 @@
           },
           "to": [
             {
-              "key_code": "m",
+              "key_code": "left_arrow",
               "modifiers": [
                 "left_control"
               ]
@@ -444,13 +444,12 @@
           ]
         },
         {
-          "description": "shift + control + j = mouse wheel down",
+          "description": "control + j = tree-sitter navigation",
           "type": "basic",
           "from": {
             "key_code": "j",
             "modifiers": {
               "mandatory": [
-                "left_shift",
                 "left_control",
                 "right_command",
                 "right_control",
@@ -461,11 +460,12 @@
           },
           "to": [
             {
-              "mouse_key": {
-                "vertical_wheel": 64
-              }
+              "key_code": "m",
+              "modifiers": [
+                "left_control"
+              ]
             }
-          ]
+          ]        
         },
         {
           "description": "shift + command + j = mouse wheel down fast",
