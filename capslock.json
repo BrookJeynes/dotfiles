@@ -2542,7 +2542,7 @@
           },
           "to": [
             {
-              "key_code": "semicolon",
+              "key_code": "u",
               "modifiers": [
                 "left_shift"
               ]
