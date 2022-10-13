@@ -1,9 +1,13 @@
 # Keyboard Layout
 
-![Layers 1 and 2](layer-1.png)
+![Layers 1 and 2](./layers/layer-1.png) <br />
 Figure: Layers 1 and 2 
 
-![Layer 3](layer-3.png)
+<br />
+
+![Layer 3](./layers/layer-3.png) <br />
 Figure: Layer 3
 
-* images made with http://www.keyboard-layout-editor.com/#/
+---
+
+\* images made with http://www.keyboard-layout-editor.com/#/
