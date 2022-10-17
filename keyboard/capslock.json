@@ -2338,60 +2338,6 @@
       ]
     },
     {
-      "description": "Hyper Code",
-      "manipulators": [
-        {
-          "description": "a + semicolon = `",
-          "type": "basic",
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "`",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]        
-        },
-        {
-          "description": "a + l = ]",
-          "type": "basic",
-          "from": {
-            "key_code": "l",
-            "modifiers": {
-              "mandatory": [
-                "left_control",
-                "right_command",
-                "right_control",
-                "right_shift",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "]",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]        
-        }
-
-      ]
-    },
-    {
       "description": "Hyper Application",
       "manipulators": [
         {
