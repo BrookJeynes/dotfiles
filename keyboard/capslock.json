@@ -8,7 +8,7 @@
   "author": "Brook Jeynes",
   "website": "",
   "json_url": "https://raw.githubusercontent.com/BrookJeynes/dotfiles/main/capslock.json",
-  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/BrookJeynes/dotfiles/main/capslock.json",
+  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/BrookJeynes/dotfiles/main/keyboard/capslock.json",
   "gallery_url": "",
   "repo": "https://github.com/BrookJeynes/dotfiles/blob/main/capslock.json",
   "rules": [
@@ -2494,7 +2494,7 @@
           },
           "to": [
             {
-              "key_code": "semicolon",
+              "key_code": "u",
               "modifiers": [
                 "left_control"
               ]
@@ -2543,6 +2543,35 @@
           "to": [
             {
               "key_code": "u",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ]        
+        }
+      ]
+    },
+    {
+      "description": "Hyper Application",
+      "manipulators": [
+       {
+          "description": "a + ; = `",
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "right_command",
+                "right_control",
+                "right_shift",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "`",
               "modifiers": [
                 "left_shift"
               ]
