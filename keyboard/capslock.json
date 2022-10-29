@@ -329,7 +329,7 @@
               ]
             }
           ]        
-        },
+        }, 
         {
           "description": "command + i = {",
           "type": "basic",
@@ -347,7 +347,7 @@
           },
           "to": [
             {
-              "key_code": "open_backet",
+              "key_code": "open_bracket",
               "modifiers": [
                 "left_shift"
               ]
@@ -358,7 +358,7 @@
           "description": "command + k = (",
           "type": "basic",
           "from": {
-            "key_code": "i",
+            "key_code": "k",
             "modifiers": {
               "mandatory": [
                 "left_command",
@@ -395,7 +395,7 @@
           },
           "to": [
             {
-              "key_code": "open_backet"
+              "key_code": "open_bracket"
             }
           ]        
         },
@@ -509,7 +509,7 @@
           },
           "to": [
             {
-              "key_code": ";"
+              "key_code": "semicolon"
             }
           ]        
         },
@@ -541,7 +541,7 @@
           "description": "command + [ = @",
           "type": "basic",
           "from": {
-            "key_code": "open_backet",
+            "key_code": "open_bracket",
             "modifiers": {
               "mandatory": [
                 "left_command",
