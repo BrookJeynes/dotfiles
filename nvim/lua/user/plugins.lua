@@ -38,6 +38,8 @@ packer.init {
   },
 }
 
+require("mason").setup()
+
 -- Install your plugins here
 return packer.startup(function(use)
   -- Utility
@@ -58,14 +60,16 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "tpope/vim-surround" -- Add/Replace/Remove surround tags
-  use "easymotion/vim-easymotion"
+  use "RRethy/vim-illuminate"
 
   -- Visual Elements
   use "kyazdani42/nvim-web-devicons"
 
   -- Colorschemes
   use 'arcticicestudio/nord-vim'
-   
+
+  use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -73,17 +77,36 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   use "github/copilot.vim" -- Github copilot
 
+  -- Languages
+  use 'simrat39/rust-tools.nvim'
+
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup {
+        mode = "workspace_diagnostics",
+        use_diagnostic_signs = true,
+      }
+    end
+  }
+  use 'folke/lsp-colors.nvim'
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
