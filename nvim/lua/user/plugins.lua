@@ -68,8 +68,6 @@ return packer.startup(function(use)
   -- Colorschemes
   use 'arcticicestudio/nord-vim'
 
-  use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
-
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -86,6 +84,7 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   use "github/copilot.vim" -- Github copilot
+  use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 
   -- Languages
   use 'simrat39/rust-tools.nvim'
