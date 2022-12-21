@@ -1,0 +1,49 @@
+#!/usr/bin/env sh
+
+source "$HOME/.config/sketchybar/color.sh"
+
+PLUGIN_DIR="$HOME/.config/sketchybar/controller"
+PLUGIN_TOUCH="$HOME/.config/sketchybar/controller/touch"
+ITEM_DIR="$HOME/.config/sketchybar/view"
+
+PADDING=4
+ICON="SF Symbols"
+LABEL="MesloLGF NS"
+
+sketchybar --bar     height=30                                            \
+                     blur_radius=0                                        \
+                     padding_left=0                                       \
+                     padding_right=10                                      \
+                     color=0xff${NORD0:1}                                 \
+                     position=top                                         \
+                     sticky=on                                            \
+                     font_smoothing=on                                    \
+                                                                          \
+           --default updates=when_shown                                   \
+                     drawing=on                                           \
+                     icon.font="$ICON:SemiBold:10.0"                      \
+                     label.font="$LABEL:SemiBold:13.0"                    \
+                     icon.padding_left=$PADDING                           \
+                     icon.padding_right=$PADDING                          \
+                     label.padding_left=$PADDING                          \
+                     label.padding_right=$PADDING                         \
+                     label.color=0xff${NORD6:1}                           \
+                     icon.color=0xff${NORD6:1}                            \
+
+
+# left
+source "$ITEM_DIR/space.sh"
+source "$ITEM_DIR/front_app.sh"
+
+# right
+source "$ITEM_DIR/time.sh"
+source "$ITEM_DIR/cal.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/mem.sh"
+source "$ITEM_DIR/cpu.sh"
+
+# initializing
+sketchybar --update
+
+echo "sketchybar configuration loaded.."

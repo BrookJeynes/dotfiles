@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/home/bjeyn/.config/nvim'
-let g:netrw_dirhist_3='/home/bjeyn/Desktop/Testlab360_Docs/code_documentation/typescript_documentation'
-let g:netrw_dirhist_2='/home/bjeyn/Desktop/Testlab360_Docs/code_documentation/javascript_documentation/example_code/objects'
-let g:netrw_dirhist_1='/usr/src'

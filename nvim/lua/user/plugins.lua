@@ -83,11 +83,11 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-  use "github/copilot.vim" -- Github copilot
   use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 
   -- Languages
   use 'simrat39/rust-tools.nvim'
+  use 'fatih/vim-go'
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -96,16 +96,6 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-  use {
-    "folke/trouble.nvim",
-    config = function()
-      require("trouble").setup {
-        mode = "workspace_diagnostics",
-        use_diagnostic_signs = true,
-      }
-    end
-  }
-  use 'folke/lsp-colors.nvim'
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
