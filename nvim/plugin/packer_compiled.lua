@@ -186,10 +186,20 @@ _G.packer_plugins = {
     path = "/Users/jeynesb/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["typescript-vim"] = {
+    loaded = true,
+    path = "/Users/jeynesb/.local/share/nvim/site/pack/packer/start/typescript-vim",
+    url = "https://github.com/leafgarland/typescript-vim"
+  },
   undotree = {
     loaded = true,
     path = "/Users/jeynesb/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-elixir"] = {
+    loaded = true,
+    path = "/Users/jeynesb/.local/share/nvim/site/pack/packer/start/vim-elixir",
+    url = "https://github.com/elixir-editors/vim-elixir"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -201,10 +211,25 @@ _G.packer_plugins = {
     path = "/Users/jeynesb/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
   },
+  ["vim-graphql"] = {
+    loaded = true,
+    path = "/Users/jeynesb/.local/share/nvim/site/pack/packer/start/vim-graphql",
+    url = "https://github.com/jparise/vim-graphql"
+  },
   ["vim-illuminate"] = {
     loaded = true,
     path = "/Users/jeynesb/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-javascript"] = {
+    loaded = true,
+    path = "/Users/jeynesb/.local/share/nvim/site/pack/packer/start/vim-javascript",
+    url = "https://github.com/pangloss/vim-javascript"
+  },
+  ["vim-jsx-pretty"] = {
+    loaded = true,
+    path = "/Users/jeynesb/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty",
+    url = "https://github.com/maxmellon/vim-jsx-pretty"
   },
   ["vim-surround"] = {
     loaded = true,

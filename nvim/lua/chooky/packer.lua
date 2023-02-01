@@ -13,15 +13,30 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
+    -- Colour scheme
     use 'arcticicestudio/nord-vim'
 
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-
+    -- Utility
     use('nvim-treesitter/playground')
-    use('ThePrimeagen/harpoon')
-    use('mbbill/undotree')
+    use('ThePrimeagen/harpoon') -- Tab manager
+    use('mbbill/undotree') -- Undo history
     use('tpope/vim-fugitive')
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use "akinsho/toggleterm.nvim" -- Terminal within Vim
+    use "tpope/vim-surround" -- Add/Replace/Remove surround tags
+    use "RRethy/vim-illuminate" -- Highlight all occurrences of words when hover
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use {
+        "numToStr/Comment.nvim",
+        config = function()
+            require("Comment").setup()
+        end
+    }
 
+    -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -44,20 +59,12 @@ return require('packer').startup(function(use)
         }
     }
 
-    use "akinsho/toggleterm.nvim"
-    use "tpope/vim-surround" -- Add/Replace/Remove surround tags
-    use "RRethy/vim-illuminate"
-    use 'fatih/vim-go'
+    -- Language Plugins
+    use 'fatih/vim-go' -- Go support
+    use 'elixir-editors/vim-elixir' -- Elixir support
+    use 'pangloss/vim-javascript' -- JS support
+    use 'leafgarland/typescript-vim' -- TS support
+    use 'maxmellon/vim-jsx-pretty' -- JS and JSX syntax
+    use 'jparise/vim-graphql' -- GraphQL syntax
 
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-
-    use {
-        "numToStr/Comment.nvim",
-        config = function()
-            require("Comment").setup()
-        end
-    }
 end)
