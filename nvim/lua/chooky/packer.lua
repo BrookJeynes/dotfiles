@@ -19,12 +19,11 @@ return require('packer').startup(function(use)
     -- Utility
     use('nvim-treesitter/playground')
     use('ThePrimeagen/harpoon') -- Tab manager
-    use('mbbill/undotree') -- Undo history
+    use('mbbill/undotree')      -- Undo history
     use('tpope/vim-fugitive')
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use "akinsho/toggleterm.nvim" -- Terminal within Vim
-    use "tpope/vim-surround" -- Add/Replace/Remove surround tags
-    use "RRethy/vim-illuminate" -- Highlight all occurrences of words when hover
+    use "tpope/vim-surround"      -- Add/Replace/Remove surround tags
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
@@ -35,10 +34,17 @@ return require('packer').startup(function(use)
             require("Comment").setup()
         end
     }
+    use {
+        "j-hui/fidget.nvim",
+        config = function()
+            require("fidget").setup()
+        end
+    }
 
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
         requires = {
             -- LSP Support
             { 'williamboman/mason.nvim' },
@@ -60,11 +66,17 @@ return require('packer').startup(function(use)
     }
 
     -- Language Plugins
-    use 'fatih/vim-go' -- Go support
-    use 'elixir-editors/vim-elixir' -- Elixir support
-    use 'pangloss/vim-javascript' -- JS support
+    use 'pangloss/vim-javascript'    -- JS support
     use 'leafgarland/typescript-vim' -- TS support
-    use 'maxmellon/vim-jsx-pretty' -- JS and JSX syntax
-    use 'jparise/vim-graphql' -- GraphQL syntax
+    use 'maxmellon/vim-jsx-pretty'   -- JS and JSX syntax
+    use 'jparise/vim-graphql'        -- GraphQL syntax
+    use 'neovim/pynvim'              -- Python support
 
+    -- Fun Stuff
+    use {
+        'tamton-aquib/duck.nvim',
+        config = function()
+            require("duck").setup()
+        end
+    }
 end)
