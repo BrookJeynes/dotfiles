@@ -21,3 +21,15 @@ yabai -m config mouse_drop_action swap
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Bitwarden$" manage=off
+
+# Pastel pink
+# yabai -m config active_window_border_color   0xfffcd1eb
+yabai -m config active_window_border_color   0xffffffff
+# Nord black
+yabai -m config normal_window_border_color   0xff2e3440
+
+yabai -m config window_border_width          4
+yabai -m config window_border_radius         12
+yabai -m config window_border                on
