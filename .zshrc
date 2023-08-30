@@ -7,22 +7,25 @@ fi
 
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.nvm/nvm.sh
 
-# https://github.com/newsboat/newsboat
-alias nb="newsboat"
-
-# https://github.com/sharkdp/bat
-alias cat="bat"
-
-# https://github.com/ogham/exa
-alias ls="exa"
+# Aliases
+alias cat="bat"    # https://github.com/sharkdp/bat
+alias ls="exa"     # https://github.com/ogham/exa
 alias tree="exa --tree --git-ignore"
 
 alias size="du -sh"
+alias ".."="cd .."
+
+# Zig
+export PATH="/Users/jeynesb/zig/zig-macos-aarch64-0.11.0-dev.2935+ec6ffaa1e/:$PATH"
+export PATH="/Users/jeynesb/zig/zig-macos-aarch64-0.11.0-dev.2935+ec6ffaa1e/zls/:$PATH"
+
+# https://sw.kovidgoyal.net/kitty/faq/#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-or-functional-keys-like-arrow-keys-don-t-work
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
+# Vim mode - https://github.com/softmoth/zsh-vim-mode
+source "$HOME/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
+KEYTIMEOUT=1 # https://github.com/softmoth/zsh-vim-mode#keytimeout
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export PATH="/Users/jeynesb/zig/zig-macos-aarch64-0.11.0-dev.2935+ec6ffaa1e/:$PATH"
-export PATH="/Users/jeynesb/zig/zig-macos-aarch64-0.11.0-dev.2935+ec6ffaa1e/zls/:$PATH"

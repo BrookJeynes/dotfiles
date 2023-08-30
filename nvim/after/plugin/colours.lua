@@ -1,5 +1,6 @@
 function ColourMyPencils(colour)
-	color = colour or "nord"
+	-- color = colour or "nord"
+    color = colour or "plain"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
