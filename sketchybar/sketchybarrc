@@ -8,27 +8,27 @@ ITEM_DIR="$HOME/.config/sketchybar/view"
 
 PADDING=4
 ICON="SF Symbols"
-LABEL="MesloLGF NS"
+LABEL="Iosevka Term"
 
-sketchybar --bar     height=30                                            \
+sketchybar --bar     height=32                                            \
                      blur_radius=0                                        \
                      padding_left=0                                       \
-                     padding_right=10                                      \
-                     color=0xff${NORD0:1}                                 \
+                     padding_right=10                                     \
+                     color=0xff${COL_GRAY1:1}                             \
                      position=top                                         \
                      sticky=on                                            \
                      font_smoothing=on                                    \
                                                                           \
            --default updates=when_shown                                   \
                      drawing=on                                           \
-                     icon.font="$ICON:SemiBold:10.0"                      \
-                     label.font="$LABEL:SemiBold:13.0"                    \
+                     icon.font="$ICON:SemiBold:13.0"                      \
+                     label.font="$LABEL:SemiBold:16.0"                    \
                      icon.padding_left=$PADDING                           \
                      icon.padding_right=$PADDING                          \
                      label.padding_left=$PADDING                          \
                      label.padding_right=$PADDING                         \
-                     label.color=0xff${NORD6:1}                           \
-                     icon.color=0xff${NORD6:1}                            \
+                     label.color=0xff${WHITE:1}                           \
+                     icon.color=0xff${WHITE:1}                            \
 
 
 # left
@@ -40,8 +40,6 @@ source "$ITEM_DIR/time.sh"
 source "$ITEM_DIR/cal.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/wifi.sh"
-source "$ITEM_DIR/mem.sh"
-source "$ITEM_DIR/cpu.sh"
 
 # initializing
 sketchybar --update

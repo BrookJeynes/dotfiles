@@ -9,21 +9,15 @@ for i in "${!SPACE_ICONS[@]}"; do
              --set space.$sid associated_space=$sid                     \
                               ignore_association=on                     \
                               icon=${SPACE_ICONS[i]}                    \
-                              icon.padding_left=12                      \
-                              icon.padding_right=12                     \
-                              background.padding_left=-1                 \
+                              icon.padding_left=13                      \
+                              icon.padding_right=13                     \
+                              background.padding_left=-1                \
                               background.padding_right=0                \
                               background.corner_radius=0                \
-                              background.height=30                      \
-                              background.color=0xff${NORD3:1}           \
+                              background.height=32                      \
+                              background.color=0xff${COL_CYAN:1}        \
                               background.drawing=off                    \
-                              background.border_width=1 \
-                              background.border_color=0xff${NORD6:1} \
                               label.drawing=off                         \
                               script="$PLUGIN_DIR/space.sh"             \
                               click_script="yabai -m space --focus $sid"
 done
-#
-sketchybar --add item space_separator left                              \
-           --set space_separator icon=􀄭                                 \
-                                 background.padding_left=5              \
