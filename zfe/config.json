@@ -1,0 +1,22 @@
+{
+    "show_hidden": true,
+    "sort_dirs": true,
+    "show_images": true,
+    "preview_file": true,
+    "styles": {
+        "selected_list_item": {
+            "bg": {
+                "rgb": [45, 45, 45]
+            },
+            "bold": true
+        },
+        "file_information": {
+            "fg": {
+                "rgb": [0, 0, 0]
+            },
+            "bg": {
+                "rgb": [255, 255, 255]
+            }
+        }
+    }
+}

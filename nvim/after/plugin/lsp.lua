@@ -19,7 +19,6 @@ lsp.preset("recommended")
 lsp.ensure_installed({
     'tsserver',
     'eslint',
-    'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
@@ -37,6 +36,19 @@ lsp.configure('lua-language-server', {
 require('lspconfig').zls.setup({
   on_attach = lsp_attach,
 })
+--
+
+-- Super HTML
+require('lspconfig.configs').superhtml = {
+    default_config = {
+        name = 'superhtml',
+        cmd = {'superhtml', 'lsp'},
+        filetypes = {'shtml', 'superhtml', 'html', 'htm'},
+        root_dir = require('lspconfig.util').root_pattern('.git')
+    }
+}
+lsp.configure('superhtml', {force_setup = true})
+--
 
 lsp.set_preferences({
     suggest_lsp_servers = false,

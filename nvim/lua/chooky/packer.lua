@@ -16,12 +16,11 @@ return require('packer').startup(function(use)
     -- Utility
     use('ThePrimeagen/harpoon') -- Tab manager
     use('mbbill/undotree')      -- Undo history
-    use('tpope/vim-fugitive')   -- Git
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use "akinsho/toggleterm.nvim" -- Terminal within Vim
     use "tpope/vim-surround"      -- Add/Replace/Remove surround tags
     use {
-        "numToStr/Comment.nvim",
+        "numToStr/Comment.nvim",  -- Auto-comment
         config = function()
             require("Comment").setup()
         end
