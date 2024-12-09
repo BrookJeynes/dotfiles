@@ -1,5 +1,4 @@
 function ColourMyPencils(colour)
-	-- color = colour or "nord"
     color = colour or "plain"
 	vim.cmd.colorscheme(color)
 

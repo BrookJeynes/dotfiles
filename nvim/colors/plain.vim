@@ -7,7 +7,7 @@
 "
 "   https://github.com/pbrisbin/vim-colors-off (MIT License)
 "
-" which in turn based on
+" which in turn is based on
 "
 "   https://github.com/reedes/vim-colors-pencil (MIT License)
 "

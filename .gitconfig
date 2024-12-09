@@ -1,0 +1,5 @@
+[alias]
+    dlog = -c diff.external=difft log -p --ext-diff
+    dshow = -c diff.external=difft show --ext-diff
+    ddiff = -c diff.external=difft diff
+    bbranch = !$HOME/scripts/.better-git-branch.sh

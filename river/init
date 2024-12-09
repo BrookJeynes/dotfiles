@@ -1,0 +1,228 @@
+#!/bin/sh
+
+# ------ #
+# CONFIG #
+# ------ #
+
+# Lock screen
+riverctl map normal Super+Control l spawn "$HOME/scripts/.lock.sh && swaylock -e -f -i /tmp/screen.png"
+
+# Exit river
+riverctl map normal Super+Shift e exit
+
+# ------- #
+# UTILITY #
+# ------- #
+
+# Start an instance of dmenu
+riverctl map normal Super s spawn dmenu_run
+
+# Start an instance of kitty
+riverctl map normal Super+Shift Return spawn kitty
+
+# Screenshot
+riverctl map normal Shift+Control p spawn "grim -o $(river-bedload -print outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')"
+riverctl map normal Control p spawn 'grim -g "$(slurp -d)" - | wl-copy'
+
+# ---------- #
+# STATUS BAR #
+# ---------- #
+
+riverctl spawn waybar
+
+# --------- #
+# WORKSPACE #
+# --------- #
+
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    # Focus tag [0-8]
+    riverctl map normal Super $i set-focused-tags $tags
+
+    # Move focused window to tag [0-8]
+    riverctl map normal Super+Shift $i set-view-tags $tags
+
+    # Toggle focus of tag [0-8]
+    riverctl map normal Super+Control $i toggle-focused-tags $tags
+
+    # Super+Shift+Control+[1-9] to toggle tag [0-8] of focused view
+    riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+done
+
+# Focus all tags
+# Tag focused view with all tags
+all_tags=$(((1 << 32) - 1))
+riverctl map normal Super 0 set-focused-tags $all_tags
+riverctl map normal Super+Shift 0 set-view-tags $all_tags
+
+# ------- #
+# WINDOWS #
+# ------- #
+
+# Kill focused view
+riverctl map normal Super+Shift Q close
+
+riverctl default-layout bsp-layout
+river-bsp-layout --inner-gap 5 --outer-gap 10 --split-perc 0.5 &
+
+# Resize views
+riverctl map normal Super+Alt+Shift n resize horizontal -100
+riverctl map normal Super+Alt+Shift e resize vertical 100
+riverctl map normal Super+Alt+Shift i resize vertical -100
+riverctl map normal Super+Alt+Shift o resize horizontal 100
+
+# Focus the next/previous view in the layout stack
+riverctl map normal Super n focus-view left
+riverctl map normal Super e focus-view down
+riverctl map normal Super i focus-view up
+riverctl map normal Super o focus-view right
+
+# Swap the focused view with the next/previous view in the layout stack
+riverctl map normal Super+Shift n swap left
+riverctl map normal Super+Shift e swap down
+riverctl map normal Super+Shift i swap up
+riverctl map normal Super+Shift o swap right
+
+# -------- #
+# FLOATING #
+# -------- #
+
+# Move focused view
+riverctl map normal Super+Alt n move left 100
+riverctl map normal Super+Alt e move down 100
+riverctl map normal Super+Alt i move up 100
+riverctl map normal Super+Alt o move right 100
+
+# Snap focused view
+riverctl map normal Super+Alt+Control n snap left
+riverctl map normal Super+Alt+Control e snap down
+riverctl map normal Super+Alt+Control i snap up
+riverctl map normal Super+Alt+Control o snap right
+
+# ----- #
+# MOUSE #
+# ----- #
+
+# Drag views with mouse
+riverctl map-pointer normal Super BTN_LEFT move-view
+
+# Resize views with mouse
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+
+# Toggle float with mouse
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+
+# ------- #
+# DISPLAY #
+# ------- #
+
+riverctl spawn "swaybg -m fill -i $HOME/Pictures/background.jpg"
+
+riverctl spawn kanshi
+
+# ------ #
+# INPUTS #
+# ------ #
+
+# Set keyboard repeat rate
+riverctl set-repeat 50 300
+
+# Handle switching to and from kr. Dunno why the right alt key seems to switch 
+# its keycode at random...
+riverctl map normal None Alt_R spawn $HOME/scripts/.kr.sh
+riverctl map normal None ISO_Level3_Shift spawn $HOME/scripts/.kr.sh
+
+# Touchpad
+riverctl input "pointer-2362-628-PIXA3854:00_093A:0274_Touchpad" disable-while-typing disabled
+riverctl input "pointer-2362-628-PIXA3854:00_093A:0274_Touchpad" natural-scroll enabled
+
+for mode in normal locked
+do
+    # Volume controls
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'amixer set Master 5%+'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'amixer set Master 5%-'
+    riverctl map $mode None XF86AudioMute         spawn 'amixer set Master toggle'
+
+    # Media player controls
+    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
+    riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
+
+    # Screen brightness controls
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set +5%'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+done
+
+# ---------- #
+# CONTAINERS #
+# ---------- #
+
+# Split horizontal
+riverctl map normal Super h send-layout-cmd bsp-layout --start-hsplit
+
+# Split vertical
+riverctl map normal Super v send-layout-cmd bsp-layout --start-vsplit
+
+# Toggle float
+riverctl map normal Super+Shift Space toggle-float
+
+# Toggle fullscreen
+riverctl map normal Super f toggle-fullscreen
+
+# ----- #
+# RULES #
+# ----- #
+
+# Make all views with an app-id that starts with "float" and title "foo" start floating.
+riverctl rule-add -app-id 'float*' -title 'foo' float
+
+# Make all views with app-id "bar" and any title use client-side decorations
+riverctl rule-add -app-id "bar" csd
+
+# -----
+
+# Super+Period and Super+Comma to focus the next/previous output
+riverctl map normal Super Period focus-output next
+riverctl map normal Super Comma focus-output previous
+
+# Super+Shift+{Period,Comma} to send the focused view to the next/previous output
+riverctl map normal Super+Shift Period send-to-output next
+riverctl map normal Super+Shift Comma send-to-output previous
+
+# Super+Return to bump the focused view to the top of the layout stack
+riverctl map normal Super Return zoom
+
+# Super+H and Super+L to decrease/increase the main ratio of rivertile(1)
+riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+
+# Super+Shift+H and Super+Shift+L to increment/decrement the main count of rivertile(1)
+riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"
+riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"
+
+# Super+{Up,Right,Down,Left} to change layout orientation
+riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
+riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
+riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
+
+# Declare a passthrough mode. This mode has only a single mapping to return to
+# normal mode. This makes it useful for testing a nested wayland compositor
+riverctl declare-mode passthrough
+
+# Super+F11 to enter passthrough mode
+riverctl map normal Super F11 enter-mode passthrough
+
+# Super+F11 to return to normal mode
+riverctl map passthrough Super F11 enter-mode normal
+
+# https://github.com/emersion/xdg-desktop-portal-wlr/wiki/%22It-doesn't-work%22-Troubleshooting-Checklist
+# Import the WAYLAND_DISPLAY env var from sway into the systemd user session.
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+
+# Stop any services that are running, so that they receive the new env var when they restart.
+systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
+systemctl --user start pipewire-media-session
