@@ -1,0 +1,66 @@
+{
+    "show_hidden": true,
+    "sort_dirs": true,
+    "show_images": true,
+    "preview_file": true,
+    "true_dir_size": false,
+    "keybinds": {},
+    "styles": {
+        "selected_list_item": {
+            "bg": {
+                "rgb": [71, 71, 71]
+            },
+            "fg": {
+                "rgb": [204, 204, 204]
+            }
+        },
+        "notification": {
+            "box": {
+                "bg": {
+                    "rgb": [226, 226, 226]
+                },
+                "fg": {
+                    "rgb": [71, 71, 71]
+                }
+            },
+            "err": {
+                "bg": {
+                    "rgb": [226, 226, 226]
+                },
+                "fg": {
+                    "rgb": [215, 0, 0]
+                }
+            },
+            "warn": {
+                "bg": {
+                    "rgb": [226, 226, 226]
+                },
+                "fg": {
+                    "rgb": [215, 95, 0]
+                }
+            },
+            "info": {
+                "bg": {
+                    "rgb": [226, 226, 226]
+                },
+                "fg": {
+                    "rgb": [0, 135, 175]
+                }
+            }
+        },
+        "file_information": {
+            "bg": {
+                "rgb": [71, 71, 71]
+            },
+            "fg": {
+                "rgb": [204, 204, 204]
+            }
+        },
+        "git_branch": {
+            "fg": {
+                "rgb": [71, 71, 71]
+            },
+            "bold": true
+        }
+    }
+}

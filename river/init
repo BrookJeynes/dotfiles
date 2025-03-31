@@ -18,7 +18,7 @@ riverctl map normal Super+Shift e exit
 riverctl map normal Super s spawn dmenu_run
 
 # Start an instance of kitty
-riverctl map normal Super+Shift Return spawn kitty
+riverctl map normal Super+Shift Return spawn foot
 
 # Screenshot
 riverctl map normal Shift+Control p spawn "grim -o $(river-bedload -print outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')"

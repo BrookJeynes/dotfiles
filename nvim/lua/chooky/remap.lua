@@ -36,12 +36,35 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- search and replace current word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- make current file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
 -- stay in visual mode when indenting left / right
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+-- Git blame
+vim.keymap.set("n", "<Leader>b", function()
+  local line = vim.fn.line(".")
+  vim.cmd("!git blame % -L " .. line .. "," .. line)
+end, { silent = true })
+
+vim.keymap.set("v", "<Leader>b", function()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "x", false)
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  vim.cmd("!git blame % -L " .. start_line .. "," .. end_line)
+end, { silent = true })
+
+-- Git log
+vim.keymap.set("n", "<Leader>B", function()
+  local line = vim.fn.line(".")
+  vim.cmd("!git log --pretty=short -u -L " .. line .. "," .. line .. ":%")
+end, { silent = true })
+
+vim.keymap.set("v", "<Leader>B", function()
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "x", false)
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  vim.cmd("!git log --pretty=short -u -L " .. start_line .. "," .. end_line .. ":%")
+end, { silent = true })
 
 -- tabs
 -- vim.keymap.set("n", "<leader>a", ":tabnew `=expand('%:p')`<CR>")
@@ -77,3 +100,32 @@ end
 
 vim.keymap.set("n", "<leader>a", set_next_global_mark, { desc = "Set next available global mark" })
 vim.keymap.set("n", "<C-ESC><C-ESC>", ":delmarks ABCDEFGHIJKLMNOPQRSTUVWXYZ<CR>")
+
+local function retrieve_github_location()
+    local remote_url = vim.trim(vim.fn.system("git config --get remote.origin.url"))
+    if remote_url == "" then
+        print("[ERROR] Not in a Git repo.")
+        return
+    end
+
+    local line_no = vim.fn.line(".")
+    local git_root = vim.trim(vim.fn.system("git rev-parse --show-toplevel"))
+    local abs_path = vim.fn.expand("%:p")
+    local file = abs_path:gsub("^" .. vim.pesc(git_root .. "/"), "")
+
+    local user, repo
+    user, repo = remote_url:match("github.com.*[:/]([%w-_]+)/([%w-_%.]+)")
+    if repo then
+        repo = repo:gsub("%.git$", "")
+    end
+
+    local branch = vim.trim(vim.fn.system("git rev-parse --abbrev-ref HEAD"))
+    if string.find(branch, "fatal") then
+        branch = "main"
+    end
+
+    local url = string.format("https://github.com/%s/%s/blob/%s/%s#L%s", user, repo, branch, file, line_no)
+    vim.fn.setreg("+", url)
+    print(url)
+end
+vim.keymap.set("n", "<leader>gl", retrieve_github_location, { desc = "Retrieve a link for the line via GitHub" })

@@ -53,5 +53,4 @@ return require('packer').startup(function(use)
     use 'leafgarland/typescript-vim' -- TS support
     use 'maxmellon/vim-jsx-pretty'   -- JS and JSX syntax
     use 'jparise/vim-graphql'        -- GraphQL syntax
-    use 'neovim/pynvim'              -- Python support
 end)
