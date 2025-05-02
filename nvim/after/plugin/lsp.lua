@@ -16,11 +16,6 @@ end
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-    'tsserver',
-    'eslint',
-})
-
 -- Fix Undefined global 'vim'
 lsp.configure('lua-language-server', {
     settings = {
@@ -30,6 +25,10 @@ lsp.configure('lua-language-server', {
             }
         }
     }
+})
+
+require('lspconfig').biome.setup({
+  on_attach = lsp_attach,
 })
 
 -- ZLS

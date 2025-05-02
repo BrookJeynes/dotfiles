@@ -1,0 +1,54 @@
+-- cmd
+zsh		        -- /usr/bin/zsh
+i3              -- /usr/bin/i3
+river           -- /usr/bin/river
+swayrbar        -- $HOME/.cargo/bin/swayrbar
+aws             -- /usr/bin/aws
+
+-- tools
+nvim	        -- /usr/bin/nvim
+ripgrep         -- /usr/bin/rg
+gh              -- /usr/bin/gh
+jido            -- /usr/bin/jido
+wf-recorder     -- /usr/bin/wf-recorder
+swayrbar        -- ~/.cargo/bin/swayrbar
+tmate           -- /usr/bin/tmate
+cy              -- /usr/bin/cy
+wtype           -- /usr/bin/wtype
+seogi           -- /usr/bin/seogi
+diskonaut       -- /usr/bin/diskonaut
+difft           -- /usr/bin/difft
+yt-dlp          -- /usr/bin/yt-dlp
+showmethekey    -- /usr/bin/showmethekey-gtk
+bagels          -- ~/.local/bin/bagels
+zoomer          -- ~/.local/bin/zoomer
+
+-- package managers
+zigver          -- /usr/bin/zigver
+fnm             -- ~/.local/share/fnm/fnm
+uv              -- ~/.local/bin/uv
+cargo           -- $HOME/.cargo/bin/cargo
+
+-- languages
+golang          -- /usr/bin/go
+zig             -- $HOME/.zig/current/zig
+
+-- lsp
+zls             -- $HOME/.zig/current/zls
+superhtml       -- /usr/bin/superhtml
+ziggy           -- /usr/bin/ziggy
+
+-- apps
+kitty	    	-- /usr/bin/kitty
+kitten	    	-- /usr/bin/kitten
+discord	    	-- $HOME/Applications/Discord
+floorp          -- $HOME/Applications/floorp/
+chrome          -- /usr/bin/google-chrome
+anki            -- /usr/local/bin/anki
+bitwarden       -- $HOME/Applications/Bitwarden-2024.7.1-x86_64.AppImage
+vlc             -- /usr/bin/vlc
+obs             -- flatpak run com.obsproject.Studio
+pia             -- /usr/local/bin/piactl
+scrcpy          -- /usr/bin/scrcpy
+newsboat        -- /usr/bin/newsboat
+vesktop         -- /usr/bin/vesktop
